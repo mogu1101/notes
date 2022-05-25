@@ -1,0 +1,75 @@
+syntax on
+syntax enable
+set number
+set wrap
+set showcmd
+set wildmenu
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+set background=dark
+set noshowmode
+set cursorline
+set laststatus=2
+set nocompatible
+filetype on
+filetype indent on
+filetype plugin on
+filetype plugin indent on
+set mouse=a
+set encoding=utf-8
+let &t_ut=''
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set list
+
+map S :w<CR>
+map Q :q<CR>
+map R :source $MYVIMRC<CR>
+map s :<nop>
+                               
+map sl :set splitright<CR>:vsplit<CR>
+map sh :set nosplitright<CR>:vsplit<CR>
+map sk :set nosplitbelow<CR>:split<CR>
+map sj :set splitbelow<CR>:split<CR>
+
+map <C-l> <C-w>l
+map <C-h> <C-w>h
+map <C-k> <C-w>k
+map <C-j> <C-w>j
+map <C-i> <C-w>w
+
+map <up> :res +5<CR>
+map <down> :res -5<CR>
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR>
+
+map tt :tabe<CR>
+map th :tabp<CR>
+map tl :tabn<CR>
+
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+call plug#begin()
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasr/molokai'
+Plug 'rakr/vim-one'
+Plug 'preservim/nerdtree'
+
+call plug#end()
+
+colorscheme one
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'default'
+
